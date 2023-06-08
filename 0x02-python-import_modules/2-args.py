@@ -13,6 +13,3 @@ if __name__ == "__main__":
         while (index <= args):
             print("{}: {}".format(index, argv[index]))
             index += 1
-
-            
-
