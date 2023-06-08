@@ -5,4 +5,3 @@ if __name__ == "__main__":
     for item in arr:
         if (item[:2] != "__"):
             print(item)
-
