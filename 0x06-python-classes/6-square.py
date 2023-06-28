@@ -43,8 +43,6 @@ class Square():
     def my_print(self):
         num = self.size
         pos = self.position
-        for i in range(pos[1]):
-            print("")
         for i in range(num):
             [print(" ", end="") for j in range(pos[0])]
             [print("#", end="") for k in range(num)]
