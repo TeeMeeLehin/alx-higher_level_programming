@@ -42,7 +42,27 @@ class Square():
 
     def my_print(self):
         num = self.size
+        pos = self.position
+        for i in range(pos[1]):
+            print("")
         for i in range(num):
-            print("{}".format(num * '#'))
+            [print(" ", end="") for j in range(pos[0])]
+            [print("#", end="") for k in range(num)]
+            print("")
         if num == 0:
             print("")
+
+my_square_1 = Square(3)
+my_square_1.my_print()
+
+print("--")
+
+my_square_2 = Square(3, (1, 1))
+my_square_2.my_print()
+
+print("--")
+
+my_square_3 = Square(3, (3, 0))
+my_square_3.my_print()
+
+print("--")
