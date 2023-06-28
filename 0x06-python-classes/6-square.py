@@ -45,6 +45,7 @@ class Square():
         pos = self.position
         if num == 0:
             print("")
+            return
         for i in range(pos[1]):
             [print("")]
         for i in range(num):
