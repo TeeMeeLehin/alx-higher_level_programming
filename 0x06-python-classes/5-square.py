@@ -32,3 +32,5 @@ class Square():
         num = self.size
         for i in range(num):
             print("{}".format(num * '#'))
+        if num == 0:
+            print("")
