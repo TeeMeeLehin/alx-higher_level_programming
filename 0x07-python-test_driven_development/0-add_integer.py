@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" 
-Function to add Integers 
+"""
+Function to add Integers
 
 
 """
