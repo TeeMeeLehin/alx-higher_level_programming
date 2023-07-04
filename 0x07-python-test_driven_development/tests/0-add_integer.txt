@@ -1,0 +1,38 @@
+Testing the add_integer function
+
+Import Python module 
+>>> file = __import__("0-add_integer")
+>>> add_integer = file.add_integer
+
+#Tests to show the function works
+>>> add_integer(2, 3)
+5
+>>> add_integer(0)
+98
+
+#Tests to show the function works with negative numbers
+>>> add_integer(-1)
+97
+>>> add_integer(-3, -87)
+-90
+
+#Tests to show the function raises TypeErrors
+>>> add_integer(True)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/timix/Documents/ALX/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 4, in add_integer
+    raise TypeError("{} must be an integer".format(a))
+TypeError: True must be an integer
+>>> add_integer(4+5j)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/timix/Documents/ALX/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 4, in add_integer
+    raise TypeError("{} must be an integer".format(a))
+TypeError: (4+5j) must be an integer
+>>> add_integer(3, "cat")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/timix/Documents/ALX/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 6, in add_integer
+    raise TypeError("{} must be an integer".format(b))
+TypeError: cat must be an integer
+
