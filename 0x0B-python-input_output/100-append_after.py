@@ -4,6 +4,7 @@
 
 def append_after(filename="", search_string="", new_string=""):
     "function to append text to file  after a particular line"
+    text = ""
     with open(filename) as f:
         for line in f:
             text += line
