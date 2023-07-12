@@ -6,6 +6,8 @@ class MyList(list):
     "Instance of a list class"
     pass
 
+    def __init__(self):
+        super().__init__()
+
     def print_sorted(self):
-        new_list = sorted(self)
-        print(new_list)
+        print(sorted(self))
