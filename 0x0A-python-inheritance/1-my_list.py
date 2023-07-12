@@ -4,7 +4,6 @@
 
 class MyList(list):
     "Instance of a list class"
-    pass
 
     def __init__(self):
         "initiating the class"
