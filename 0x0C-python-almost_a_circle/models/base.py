@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """base python script"""
 import json
+import os
 
 
 class Base():
@@ -51,3 +52,16 @@ class Base():
             rect = cls(3)
         rect.update(**dictionary)
         return rect
+
+    @classmethod
+    def load_from_file(cls):
+        "function to load json from file"
+        list_instance = []
+        file_name = cls.__name__ + ".json"
+        if os.path.isfile(file_name):
+            with open(file_name, "r") as file:
+                s = cls.from_json_string(file.read())
+            for i in s:
+                list_instance.append(cls.create(**i))
+            return list_instance
+        return []

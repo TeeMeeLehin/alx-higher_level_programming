@@ -3,6 +3,7 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+from models.square import Square
 
 
 class TestBase(unittest.TestCase):
@@ -66,6 +67,20 @@ class TestBase(unittest.TestCase):
         expected_result = [{"name": "John", "age": 30}, {"name": "Jane", "age": 25}]
         result = Rectangle.from_json_string(json_string)
         self.assertEqual(result, expected_result)
+    
+    def test_create_rect(self):
+        "testing the create method for rectangle class"
+        rectangle_dict = {"width": 5, "height": 10, "x": 2, "y": 3, "id": 8}
+        expected_rectangle = Rectangle(5, 10, 2, 3, 8)
+        result_rectangle = Rectangle.create(**rectangle_dict)
+        self.assertEqual(result_rectangle.__dict__, expected_rectangle.__dict__)
+
+    def test_create_square(self):
+        square_dict = {"size": 7, "x": 1, "y": 2, "id": 9}
+        expected_square = Square(7, 1, 2, 9)
+        result_square = Square.create(**square_dict)
+        self.assertEqual(result_square.__dict__, expected_square.__dict__)
+
 
 if __name__ == '__main__':
     unittest.main()
