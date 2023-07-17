@@ -23,7 +23,12 @@ class TestBase(unittest.TestCase):
 
         base2 = Base(200)
         self.assertEqual(base2.id, 200)
+    
+    def test_to_json(self):
+        pass
 
+    def test_save_to_file(self):
+        pass
 
 if __name__ == '__main__':
     unittest.main()

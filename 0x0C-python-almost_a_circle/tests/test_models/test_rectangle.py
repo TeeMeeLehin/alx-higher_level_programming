@@ -90,6 +90,8 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect2.height, 4)
         self.assertEqual(rect2.y, 3)
 
+    def test_to_dictionary(self):
+        pass
 
 if __name__ == '__main__':
     unittest.main()

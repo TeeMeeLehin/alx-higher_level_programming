@@ -130,3 +130,13 @@ class Rectangle(Base):
                 self.x = my_dict['x']
             if 'y' in my_dict:
                 self.y = my_dict['y']
+
+    def to_dictionary(self):
+        "returning dictionary representation of class"
+        class_dict = {}
+        for key, value in self.__dict__.items():
+            if key.startswith("_"):
+                class_dict[key.split("__")[-1]] = value
+            else:
+                class_dict[key] = value
+        return class_dict
