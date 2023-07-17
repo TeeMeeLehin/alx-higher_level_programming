@@ -38,31 +38,31 @@ class TestRectangle(unittest.TestCase):
 
     def test_weight_validation(self):
         "testing the validation of weight attr"
-        rect = Rectangle("2", 5)
-        self.assertRaises(TypeError)
-        rect2 = Rectangle(-2, 5)
-        self.assertRaises(ValueError)
+        with self.assertRaises(TypeError):
+            rect = Rectangle("2", 5)
+        with self.assertRaises(ValueError):
+            rect2 = Rectangle(-2, 5)
     
     def test_height_validation(self):
         "testing the validation of height attr"
-        rect = Rectangle(5, "0")
-        self.assertRaises(TypeError)
-        rect2 = Rectangle(2, -5)
-        self.assertRaises(ValueError)
+        with self.assertRaises(TypeError):
+            rect = Rectangle(5, "0")
+        with self.assertRaises(ValueError):
+            rect2 = Rectangle(2, -5)
 
     def test_x_validation(self):
         "testing the validation of x attr"
-        rect = Rectangle(2, 5, "x")
-        self.assertRaises(TypeError)
-        rect2 = Rectangle(2, 5, -1)
-        self.assertRaises(ValueError)
+        with self.assertRaises(TypeError):
+            rect = Rectangle(2, 5, "x")
+        with self.assertRaises(ValueError):
+            rect2 = Rectangle(2, 5, -1)
 
     def test_y_validation(self):
         "testing the validation of y attr"
-        rect = Rectangle(1, 5, 3, "y")
-        self.assertRaises(TypeError)
-        rect2 = Rectangle(2, 3, 4, -9)
-        self.assertRaises(ValueError)
+        with self.assertRaises(TypeError):
+            rect = Rectangle(1, 5, 3, "y")
+        with self.assertRaises(ValueError):
+            rect2 = Rectangle(2, 3, 4, -9)
     
     def test_area(self):
         "testing the area method"
