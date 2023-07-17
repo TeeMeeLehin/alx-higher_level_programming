@@ -38,6 +38,11 @@ class Base():
     @staticmethod
     def from_json_string(json_string):
         "loading data from json string"
-        if json_string is None or json_string == []:
+        if json_string is None or json_string == [] or json_string == "":
             return []
         return json.loads(json_string)
+    
+    @classmethod
+    def create(cls, **dictionary):
+        "returning class obj from dictionary"
+        

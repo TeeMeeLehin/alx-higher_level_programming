@@ -56,5 +56,16 @@ class TestBase(unittest.TestCase):
         self.assertEqual(content, expected)
         pass
 
+    def test_from_json_string(self):
+        "testing the from_json_string function"
+        result = Rectangle.from_json_string("")
+        self.assertEqual(result, [])
+        result = Rectangle.from_json_string(None)
+        self.assertEqual(result, [])
+        json_string = '[{"name": "John", "age": 30}, {"name": "Jane", "age": 25}]'
+        expected_result = [{"name": "John", "age": 30}, {"name": "Jane", "age": 25}]
+        result = Rectangle.from_json_string(json_string)
+        self.assertEqual(result, expected_result)
+
 if __name__ == '__main__':
     unittest.main()
