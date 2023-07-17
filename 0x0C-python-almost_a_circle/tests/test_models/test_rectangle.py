@@ -67,7 +67,7 @@ class TestRectangle(unittest.TestCase):
     def test_area(self):
         "testing the area method"
         rect = Rectangle(3, 4, 2, 1, 34)
-        self.assertEqual(rect.area, 12)
+        self.assertEqual(rect.area(), 12)
     
     def test_display(self):
         pass
@@ -83,7 +83,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.width, 3)
         self.assertEqual(rect.height, 6)
         self.assertEqual(rect.x, 9)
-        self.assertEqual(self.y, 12)
+        self.assertEqual(rect.y, 12)
         rect2 = Rectangle(2, 3)
         rect2.update(y=3, width=7, height=4)
         self.assertEqual(rect2.width, 7)

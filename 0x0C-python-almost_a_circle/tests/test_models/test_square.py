@@ -35,7 +35,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(rect.id, 23)
         self.assertEqual(rect.size, 3)
         self.assertEqual(rect.x, 9)
-        self.assertEqual(self.y, 12)
+        self.assertEqual(rect.y, 12)
         rect2 = Square(3)
         rect2.update(y=3, size=4)
         self.assertEqual(rect2.size, 4)
