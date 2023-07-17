@@ -2,6 +2,7 @@
 """base python script"""
 import json
 
+
 class Base():
     """
         Base class
