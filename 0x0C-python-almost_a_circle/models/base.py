@@ -45,4 +45,8 @@ class Base():
     @classmethod
     def create(cls, **dictionary):
         "returning class obj from dictionary"
-        
+        if cls.__name__ == "Rectangle":
+            rect = cls(3, 4)
+        elif cls.__name__ == "Square":
+            rect = cls(3)
+        rect.update(**dictionary)
