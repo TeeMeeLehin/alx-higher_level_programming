@@ -2,7 +2,6 @@
 """base python script"""
 import json
 
-
 class Base():
     """
         Base class
@@ -50,3 +49,4 @@ class Base():
         elif cls.__name__ == "Square":
             rect = cls(3)
         rect.update(**dictionary)
+        return rect
