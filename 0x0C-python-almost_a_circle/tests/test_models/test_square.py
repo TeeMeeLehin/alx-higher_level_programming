@@ -19,7 +19,11 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(sq.id, 1)
     
     def test_str(self):
-        pass
+        "testing the str method"
+        rect = Square(3, 2, 3, 5)
+        expected_output = "[Square] (5) 2/3 - 3"
+        result = str(rect)
+        self.assertEqual(result, expected_output)
 
     def test_size(self):
         "testing the getter and setter of size attr"
@@ -42,7 +46,12 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(rect2.y, 3)
     
     def test_to_dictionary(self):
-        pass
+        "testing the to_dictionary method"
+        rect = Square(3, 4, 5, 6)
+        expected_dict = {"size" : 3, "x" : 4, "y" : 5, "id" : 6}
+        res = rect.to_dictionary()
+        self.assertEqual(expected_dict, res)
+
 
 if __name__ == '__main__':
     unittest.main()

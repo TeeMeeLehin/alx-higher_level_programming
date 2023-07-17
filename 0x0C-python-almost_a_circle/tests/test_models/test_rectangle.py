@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """test scipt for rectangle class"""
 import unittest
+import io
+import sys
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -69,11 +71,32 @@ class TestRectangle(unittest.TestCase):
         rect = Rectangle(3, 4, 2, 1, 34)
         self.assertEqual(rect.area(), 12)
     
+    @staticmethod
+    def capture_stdout(rect, method):
+        "Captures and returns text printed to stdout"
+        capture = io.StringIO()
+        sys.stdout = capture
+        if method == "print":
+            print(rect)
+        else:
+            rect.display()
+        sys.stdout = sys.__stdout__
+        return capture
+    
     def test_display(self):
-        pass
+        "testing the display method"
+        rect = Rectangle(2, 3)
+        expected_output = "##\n##\n##\n"
+        capture = self.capture_stdout(rect, "display")
+        self.assertEqual(expected_output, capture.getvalue())
+
 
     def test_str(self):
-        pass
+        "testing the str method"
+        rect = Rectangle(1, 2, 3, 4, 5)
+        expected_output = "[Rectangle] (5) 3/4 - 1/2"
+        result = str(rect)
+        self.assertEqual(result, expected_output)
 
     def test_update(self):
         "testing the update method"
@@ -91,7 +114,11 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect2.y, 3)
 
     def test_to_dictionary(self):
-        pass
+        "testing the to_dictionary method"
+        rect = Rectangle(2, 3, 4, 5, 6)
+        expected_dict = {"width" : 2, "height" : 3, "x" : 4, "y" : 5, "id" : 6}
+        res = rect.to_dictionary()
+        self.assertEqual(expected_dict, res)
 
 if __name__ == '__main__':
     unittest.main()
