@@ -34,7 +34,7 @@ class Base():
             list_instance = [i.to_dictionary() for i in list_objs]
             with open(cls.__name__ + ".json", "w") as file:
                 file.write(cls.to_json_string(list_instance))
-    
+
     @staticmethod
     def from_json_string(json_string):
         "loading data from json string"
