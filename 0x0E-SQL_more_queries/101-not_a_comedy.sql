@@ -1,5 +1,4 @@
 -- listing select records
-SELECT tv_shows.title FROM tv_shows
 SELECT title
 FROM tv_shows
 WHERE title NOT IN
