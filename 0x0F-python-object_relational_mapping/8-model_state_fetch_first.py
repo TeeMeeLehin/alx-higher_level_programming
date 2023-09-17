@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""script that lists all State objects from the database hbtn_0e_6_usa"""
+"""script that lists one State objects from the database """
 import sys
 from model_state import Base, State
 from sqlalchemy.orm import Session
@@ -12,6 +12,6 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session = Session(engine)
-    for state in session.query(State).order_by(State.id).one():
-        print("{}: {}".format(state.id, state.name))
+    state = session.query(State).order_by(State.id).one():
+    print("{}: {}".format(state.id, state.name))
     session.close()
