@@ -12,9 +12,10 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session = Session(engine)
-    state = session.query(State).filter(State.name.like('{}'.format(sys.argv[4]))).first()
-    if state is not None:
-        print("{}".format(state.id))
+    x = sys.argv[4]
+    s = session.query(State).filter(State.name.like('{}'.format(x))).first()
+    if s is not None:
+        print("{}".format(s.id))
     else:
         print("Not found")
     session.close()
