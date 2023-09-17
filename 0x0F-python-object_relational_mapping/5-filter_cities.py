@@ -9,7 +9,8 @@ if __name__ == "__main__":
                          passwd="", db=sys.argv[3], port=3306)
     cur = db.cursor()
     cur.execute("""SELECT cities.name FROM cities
-                    JOIN states ON state_id=states.id WHERE states.name=%s ORDER BY cities.id""", (sys.argv[4],))
+                    JOIN states ON state_id=states.id WHERE states.name=%s
+                    ORDER BY cities.id""", (sys.argv[4],))
     rows = cur.fetchall()
     print(", ".join([row[0] for row in rows]))
 
