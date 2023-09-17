@@ -1,5 +1,4 @@
-#!/home/timix/Documents/ALX/alx-higher_level_programming/0x0F-python-object_relational_mapping/venv/bin/python3
-#/usr/bin/python3
+#!/usr/bin/python3
 """script that lists one State object from the database """
 import sys
 from model_state import Base, State
