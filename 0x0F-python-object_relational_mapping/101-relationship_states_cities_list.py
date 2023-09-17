@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-"""script that lists all State objects from the database """
+"""script that lists all State objects from the database
+"""
+
 import sys
 from relationship_state import Base, State
 from relationship_city import City
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
+from sqlalchemy.orm import relationship
 
 
 if __name__ == "__main__":
