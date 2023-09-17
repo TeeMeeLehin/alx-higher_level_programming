@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""script that lists all State objects from the database
-"""
-
+"""Script to list all cities in database """
 import sys
 from relationship_state import Base, State
 from relationship_city import City
@@ -16,8 +14,7 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session = Session(engine)
-    for state in session.query(State).order_by(State.id).all():
-        print("{}: {}".format(state.id, state.name))
-        for city in state.cities:
-            print("    {}: {}".format(city.id, city.name))
+    cities = session.query(City, State.name).join(City).order_by(City.id).all()
+    for city, state_name in cities:
+        print("{}: {} -> {}".format(city.id, city.name, state_name))
     session.close()
