@@ -8,11 +8,13 @@ of a given repo.
 import sys
 import requests
 
-url = f"https://api.github.com/repos/{sys.argv[2]}/{sys.argv[1]}/commits"
-response = requests.get(url)
-response = response.json()
+if __name__ == "__main__":
 
-for item in response[:10]:
-    sha = item.get("sha")
-    author = item.get("commit").get("author").get("name")
-    print(f"{sha}: {author}")
+    url = f"https://api.github.com/repos/{sys.argv[2]}/{sys.argv[1]}/commits"
+    response = requests.get(url)
+    response = response.json()
+
+    for item in response[:10]:
+        sha = item.get("sha")
+        author = item.get("commit").get("author").get("name")
+        print(f"{sha}: {author}")
