@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-""" Python script that displays the value of the X-Request-Id """
+""" Python script that
+    displays the value of the X-Request-Id
+"""
 
 import sys
 import urllib.request
 
-if __name__ == "__main__":
-    url = sys.argv[1]
+url = sys.argv[1]
 
-req = urllib.request.Request(url)
-with urllib.request.urlopen(req) as response:
-    print(dict(response.headers).get('X-Request-Id'))
+with urllib.request.urlopen(url) as response:
+    print(response.headers.get('X-Request-Id'))
